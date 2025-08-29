@@ -72,7 +72,6 @@ functions:
     conf:
       remove:
         - json_parsed
-        - _raw
     groupId: VQH9ac
     description: Remove intermediate fields
   - id: serde

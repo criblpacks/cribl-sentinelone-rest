@@ -22,6 +22,19 @@ Splunk data is mapped to the following sourcetypes - where applicable, these are
 * SentinelOne Vulnerabilities via GraphQL API: `sourcetype=sentinelone:graphql:vulnerabilities`
 
 
+## Which Collectors Do I Use?
+The Pack contains Collectors that support both the "legacy" SentinelOne as well as the new Singularity Operations Center. If you've opted-in to Singularity Operations Center, then use the following Collectors:
+* SentinelOne Alerts - GraphQL API
+* SentinelOne Vulnerabilities - GraphQL API
+* SentinelOne Assets
+
+If you have *not* opted in to Singularity Operations Center *or* you have existing configurations that depend on the "legacy" API, then use the following Collectors:
+* SentinelOne Alerts - MGMT API
+* SentinelOne Vulnerabilities - MGMT API
+* SentinelOne Agents
+
+In general, it should be fine to enable all six Collectors, but the GraphQL API tends to have more information than the MGMT API.
+
 ## Deployment
 After installing the Pack, you must perform the following:
 
@@ -30,14 +43,14 @@ After installing the Pack, you must perform the following:
     *  The SentinelOne Management hostname - this should be something like `https://<region>-<type>.sentinelone.net`. It's the host part of the URL used to login to SentinelOne
     *  An API token. SentinelOne has two methods for generating a token - via creating a Service User or Ad-hoc by an account with the correct permissions. The Service User method allows you to set the token expiration to something longer than 30 days - the Ad-hoc method is hard-coded to a 30 day expiration. 
 
-* Add the six Collector Sources in Appendix B to your Stream instance via Data > Sources > Collectors > REST. 
+* Add the appropriate Collector Sources in Appendix B to your Stream instance via Data > Sources > Collectors > REST. 
 * For each Collector, replace the following:
   * In Collect URL, replace `your_management_url`
   * In Collect headers->Authorization, replace `your_api_token`
 * Perform a Run > Preview to verify that each Collector works correctly.
 * Schedule each Collector and enable State Tracking (with default configuration) for the Alerts and Vulnerabilities Collectors *only*. Suggested schedules for each are:
    *  Alerts: Every 5 minutes with default State Tracking
-   *  Vulnerabilities: Every 5 minutes with default State Tracking
+   *  Vulnerabilities: Every 15 minutes with default State Tracking
    *  Assets/Agents: Once/day - these endpoints are configured to retrieve all available Assets/Agents so keep that in mind.
 * Connect your SentinelOne Rest Collectors to the Pack. On the global Routes page, add a new route, specify a filter expression (if using the default Collector names, than something like `__inputId.includes('in_sentinelone')` will work) and choose the `cribl-sentinelone-rest` Pack in the Pipeline dropdown.
 
