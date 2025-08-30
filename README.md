@@ -2,8 +2,7 @@
 ----
 ## About this Pack
 
-This Pack is designed to collect, process, and output Microsoft SentinelOne data via the SentinelOne MGMT REST and GraphQL API's. It currently supports the following endpoints:
-* 
+This Pack is designed to collect, process, and output Microsoft SentinelOne data via the SentinelOne MGMT REST and GraphQL API's. 
 
 The Pack includes OCSF and Splunk output processing. OCSF data is mapped to the following Classes:
 * SentinelOne Alerts via MGTM REST API - [Detection Finding [2004] Class](https://schema.ocsf.io/1.4.0/classes/detection_finding)
