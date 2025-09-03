@@ -47,7 +47,7 @@ routes:
     clones: []
     output: default
   - id: wUkZdX
-    name: cribl_sentinelone_aseets
+    name: cribl_sentinelone_assets
     final: true
     disabled: false
     pipeline: cribl_sentinelone_assets
