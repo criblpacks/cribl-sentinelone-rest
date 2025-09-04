@@ -2,12 +2,17 @@
 ----
 ## About this Pack
 
-This Pack is designed to collect, process, and output SentinelOne data via the SentinelOne MGMT REST and GraphQL API's. It currently supports the following endpoints:
-* 
+This Pack is designed to collect, process, and output Microsoft SentinelOne data via the SentinelOne MGMT REST and GraphQL API's. It currently supports the following endpoints (documentation is behind a paywall, unfortunately):
+* SentinelOne Alerts via MGTM REST API
+* SentinelOne Alerts via GraphQL API
+* SentinelOne Agent Inventory
+* SentinelOne Asset Inventory
+* SentinelOne Vulnerabilities via MGMT REST API
+* SentinelOne Vulnerabilities via GraphQL API
 
 The Pack includes OCSF and Splunk output processing. OCSF data is mapped to the following Classes:
 * SentinelOne Alerts via MGTM REST API - [Detection Finding [2004] Class](https://schema.ocsf.io/1.4.0/classes/detection_finding)
-* SentinelOne Alerts via GraphQL API- [Detection Finding [2004] Class](https://schema.ocsf.io/1.4.0/classes/detection_finding)
+* SentinelOne Alerts via GraphQL API - [Detection Finding [2004] Class](https://schema.ocsf.io/1.4.0/classes/detection_finding)
 * SentinelOne Agent Inventory - [Device Inventory Info [5001] Class](https://schema.ocsf.io/1.4.0/classes/inventory_info)
 * SentinelOne Asset Inventory - [Device Inventory Info [5001] Class](https://schema.ocsf.io/1.4.0/classes/inventory_info)
 * SentinelOne Vulnerabilities via MGMT REST API - [Vulnerability Finding [2002] Class](https://schema.ocsf.io/1.4.0/classes/vulnerability_finding)
