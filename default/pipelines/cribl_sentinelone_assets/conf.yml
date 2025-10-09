@@ -93,7 +93,7 @@ functions:
     groupId: WK4B9j
   - id: chain
     filter: "true"
-    disabled: false
+    disabled: true
     conf:
       processor: cribl_sentinelone_assets_ocsf
     groupId: WK4B9j

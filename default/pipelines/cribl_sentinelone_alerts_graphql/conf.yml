@@ -125,7 +125,7 @@ functions:
     groupId: WK4B9j
   - id: chain
     filter: "true"
-    disabled: false
+    disabled: true
     conf:
       processor: cribl_sentinelone_alerts_graphql_ocsf
     groupId: WK4B9j

@@ -10,7 +10,7 @@ routes:
     description: Process SentinelOne Vulerabilities
     enableOutputExpression: false
     outputExpression: null
-    filter: source.includes('/v2.1/application-management/risks')
+    filter: __packsource == 'cribl-sentinelone-rest-io.sentinelone-vulnerabilities'
     clones: []
     output: default
   - id: wUkZaX
@@ -21,7 +21,8 @@ routes:
     description: Process SentinelOne GraphQL Vulerabilities
     enableOutputExpression: false
     outputExpression: null
-    filter: source.includes('/v2.1/xspm/findings/vulnerabilities/graphql')
+    filter: __packsource ==
+      'cribl-sentinelone-rest-io.sentinelone-vulnerabilities-graphql'
     clones: []
     output: default
   - id: wUkZbX
@@ -32,7 +33,7 @@ routes:
     description: Process SentinelOne Alerts
     enableOutputExpression: false
     outputExpression: null
-    filter: source.includes('/v2.1/cloud-detection/alerts')
+    filter: __packsource == 'cribl-sentinelone-rest-io.sentinelone-alerts'
     clones: []
     output: default
   - id: wUkZcX
@@ -43,7 +44,7 @@ routes:
     description: Process SentinelOne GraphQL Alerts
     enableOutputExpression: false
     outputExpression: null
-    filter: source.includes('/v2.1/unifiedalerts/graphql')
+    filter: __packsource == 'cribl-sentinelone-rest-io.sentinelone-alerts-graphql'
     clones: []
     output: default
   - id: wUkZdX
@@ -54,7 +55,7 @@ routes:
     description: Process SentinelOne Assets
     enableOutputExpression: false
     outputExpression: null
-    filter: source.includes('/v2.1/xdr/assets/surface/endpoint')
+    filter: __packsource == 'cribl-sentinelone-rest-io.sentinelone-assets'
     clones: []
     output: default
   - id: wUkZeX
@@ -65,7 +66,7 @@ routes:
     description: Process SentinelOne Agent Inventory
     enableOutputExpression: false
     outputExpression: null
-    filter: source.includes('/v2.1/agents')
+    filter: __packsource == 'cribl-sentinelone-rest-io.sentinelone-agents'
     clones: []
     output: default
   - id: default
